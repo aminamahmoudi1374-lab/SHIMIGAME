@@ -1,0 +1,12 @@
+{
+  "name": "شهر اتم‌ها | مأموریت‌های علمی",
+  "short_name": "شهر اتم‌ها",
+  "description": "یک بازی آموزشی فارسی برای کشف ۲۰ عنصر اول جدول تناوبی",
+  "lang": "fa",
+  "dir": "rtl",
+  "start_url": "atom-city-missions.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fffaf5",
+  "theme_color": "#293b67"
+}

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b172a">
+  <meta name="description" content="یک بازی آموزشی فارسی برای کشف ۲۰ عنصر اول جدول تناوبی">
+  <link rel="manifest" href="manifest.webmanifest">
+  <title>شهر اتم‌ها | مأموریت‌های علمی</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Estedad:wght@400;500;600;700;800&family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="atom-city-missions.css">
+</head>
+<body>
+  <div class="game-shell">
+    <header class="hud">
+      <a class="logo" href="#" aria-label="شهر اتم‌ها"><span class="logo-badge">Z</span><span><b>شهر اتم‌ها</b><small>مأموریت‌های علمی</small><small class="creator-credit">ساخته شده توسط خانم محمودی مدرس تیمز هرمزگان</small></span></a>
+      <div class="hud-stats"><div class="hud-stat"><span class="hud-icon">★</span><b id="scoreValue">۰</b><small>امتیاز</small></div><div class="hud-stat"><span class="hud-icon cyan">⌁</span><b id="missionValue">۱</b><small>مأموریت</small></div><button id="encyclopediaButton" class="hud-button" type="button" title="دائره‌المعارف عناصر">▦ <span>جدول عناصر</span></button></div>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <section id="startView" class="view start-view">
+        <div class="start-copy"><span class="kicker">ماموریت آموزشی | پرونده‌ی محرمانه‌ی آزمایشگاه</span><h1>شهر را بگرد.<br><em>اتم‌ها را کشف کن.</em></h1><p>در یک شهر علمی، چهار مأموریت منتظر توست. نماد، کاربرد، عدد اتمی، الکترون و عدد جرمی هر عنصر را مثل یک کارآگاه کشف کن.</p><form id="startForm" class="start-form"><label for="playerName">نام مأمور</label><div class="name-row"><input id="playerName" maxlength="18" autocomplete="given-name" placeholder="مثلاً نیما" required><button class="primary-button" type="submit">ورود به شهر <span>←</span></button></div></form><div class="promise-row"><span>۲۰ عنصر اول جدول</span><span>۴ مأموریت مرحله‌ای</span><span>بدون خشونت، فقط کشف</span></div></div>
+        <div class="city-visual" aria-hidden="true"><div class="sun"></div><div class="city-grid"></div><div class="tower tower-one"><i></i><i></i><i></i></div><div class="tower tower-two"><i></i><i></i><i></i><i></i></div><div class="lab-building"><span>LAB</span><div class="lab-window"></div></div><div class="road road-main"></div><div class="road road-side"></div><div class="atom-orbit orbit-a"></div><div class="atom-orbit orbit-b"></div><div class="city-atom"><b>Ne</b><small>10</small></div><span class="pin pin-one">01</span><span class="pin pin-two">20</span></div>
+      </section>
+
+      <section id="mapView" class="view map-view hidden">
+        <div class="section-heading"><div><span class="kicker">نقشه‌ی شهر | سلام <b id="greetingName">مأمور</b></span><h2>هر محله، یک کشف تازه</h2><p>برای باز شدن مأموریت بعدی، مأموریت فعلی را کامل کن.</p></div><div class="rank-card"><span class="rank-star">✦</span><div><small>رتبه‌ی علمی</small><b id="rankLabel">کارآموز اتم</b></div></div></div>
+        <div class="mission-road"><div class="road-line"></div><article class="mission-card active" data-mission="1"><div class="mission-number">۰۱</div><div class="mission-illustration scan-art"><span>⌕</span></div><div class="mission-info"><span class="status">در دسترس</span><h3>اسکنر نمادها</h3><p>نماد شیمیایی را به اسم عنصر وصل کن.</p><button class="mission-button" data-start-mission="1" type="button">شروع مأموریت <b>←</b></button></div></article><article class="mission-card locked" data-mission="2"><div class="mission-number">۰۲</div><div class="mission-illustration battery-art"><span>e⁻</span></div><div class="mission-info"><span class="status">قفل است</span><h3>گاراژ الکترون‌ها</h3><p>تعداد الکترون اتم خنثی را پیدا کن.</p><button class="mission-button" data-start-mission="2" type="button" disabled>قفل مأموریت</button></div></article><article class="mission-card locked" data-mission="3"><div class="mission-number">۰۳</div><div class="mission-illustration nucleus-art"><span>+</span></div><div class="mission-info"><span class="status">قفل است</span><h3>مرکز هسته</h3><p>عدد اتمی و عدد جرمی را رمزگشایی کن.</p><button class="mission-button" data-start-mission="3" type="button" disabled>قفل مأموریت</button></div></article><article class="mission-card locked" data-mission="4"><div class="mission-number">۰۴</div><div class="mission-illustration lab-art"><span>⚗</span></div><div class="mission-info"><span class="status">قفل است</span><h3>آزمایشگاه کاربردها</h3><p>عنصر مناسب برای هر کاربرد را پیدا کن.</p><button class="mission-button" data-start-mission="4" type="button" disabled>قفل مأموریت</button></div></article></div>
+      </section>
+
+      <section id="missionView" class="view mission-view hidden"><div class="mission-top"><button id="backToMap" class="back-button" type="button">→ نقشه شهر</button><div class="mission-progress"><span id="missionTitle">مأموریت ۰۱</span><div><i id="missionProgressBar"></i></div></div><span id="missionScore" class="mission-score">+۰ امتیاز</span></div><div class="mission-panel"><div class="mission-panel-head"><span id="missionBadge" class="mission-badge">۰۱</span><div><span class="kicker" id="missionKicker">ناحیه‌ی نمادها</span><h2 id="missionHeading">اسکنر نمادها</h2><p id="missionDescription">نماد درست را برای هر عنصر پیدا کن.</p></div></div><div id="missionContent"></div><div id="missionFeedback" class="feedback" role="status"></div></div></section>
+
+      <section id="encyclopediaView" class="view encyclopedia-view hidden"><div class="section-heading compact"><div><span class="kicker">دائره‌المعارف شهر</span><h2>۲۰ عنصر اول را ورق بزن</h2><p>روی هر کارت بزن تا پرونده‌ی علمی آن را باز کنی.</p></div><button id="closeEncyclopedia" class="back-button" type="button">بستن ←</button></div><div class="search-row"><label for="elementSearch">جست‌وجوی عنصر</label><input id="elementSearch" placeholder="نام یا نماد، مثلاً O یا اکسیژن"><span id="elementCount">۲۰ عنصر</span></div><div id="elementGrid" class="element-grid"></div></section>
+    </main>
+    <footer><span>شهر اتم‌ها</span><span>عدد اتمی = تعداد پروتون‌ها</span><span>عدد جرمی = پروتون‌ها + نوترون‌ها</span></footer>
+  </div>
+  <div id="elementModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-card"><button id="closeModal" class="modal-close" type="button" aria-label="بستن پنجره">×</button><div id="modalContent"></div></div></div>
+  <noscript>برای اجرای شهر اتم‌ها، لطفاً جاوااسکریپت مرورگر را فعال کنید.</noscript>
+  <script src="atom-city-missions.js"></script>
+</body>
+</html>
